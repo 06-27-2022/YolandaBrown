@@ -1,0 +1,24 @@
+1) SELECT 'FirstName', 'LastName', 'CustomerId', 'Country' FROM "Customer"
+WHERE 'Country' != 'USA';
+
+2) SELECT * FROM "Customer"
+WHERE 'Country' = 'Brazil';
+
+3) SELECT 'Customer.FirstName Customer.LastName Customer.Country
+                  Invoice.InvoiceId Invoice.Date Invoice.BillingCountry'
+                  FROM "Customer" INNER JOIN "Invoice" ON 'Customer.CustomerId=Invoice.CustomerId';
+
+4)SELECT * FROM "Employee"
+WHERE 'Tile' = Sales;
+
+5)SELECT DISTINCT 'BillingCountry' FROM Invoice
+
+ 6)  SELECT "LastName", "FirstName"  FROM "Employee"  JOIN "Employee.EmployeeId" = "Customer.EmployeeId" JOIN "Customer.CustomerId" ="Invoice.CustomerId";
+
+  7) SELECT "Total", "FirstName" ,"Country" FROM "Employee"  JOIN "Employee.EmployeeId" = "Customer.EmployeeId"  
+
+ 8)SELECT  Count() FROM Invoice WHERE CONTAINS('2009', '2011');  
+
+9) SELECT InvoiceLineID, COUNT() FROM table InvoiceLine WHERE InvoiceLine =37; 
+
+ 10) SELECT InvoiceLineID, COUNT(*) FROM table InvoiceLine GROUP BY InvoiceLineID;
