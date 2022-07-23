@@ -1,0 +1,24 @@
+package com.employee.respository;
+
+public class Employee {
+	
+	
+	private int EmployeeId;
+	private String Emp_FirstName;
+	private String Emp_LastName;
+	private int Emp_ExpAccount;
+	
+	
+	
+	//Start of Constructer
+	public Employee(int employeeId, String emp_FirstName, String emp_LastName, int emp_ExpAccount) {
+		super();
+		EmployeeId = employeeId;
+		Emp_FirstName = emp_FirstName;
+		Emp_LastName = emp_LastName;
+		Emp_ExpAccount = emp_ExpAccount;
+	}
+	
+	
+
+}

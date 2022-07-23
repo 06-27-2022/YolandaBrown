@@ -1,0 +1,77 @@
+package com.employee.respository;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployeeList2 {
+
+	
+	public static void main(String[] args) {
+		
+		Connection conn7 = null;
+		PreparedStatement stmt5 =null;
+		
+		Employee emp1 =new Employee( 100, "Ashley", "Jones", 1001);
+		Employee emp2 =new Employee( 102, "Chris", "James",  1002);
+    	Employee emp3 =new Employee( 100, "Barbara", "Jackson", 1003);
+		Employee emp4 =new Employee( 100, "Carlos", "Johnson", 1004);
+		Employee emp5 =new Employee( 100, "Myron", "Stevenson", 1005);
+		
+		try {
+			conn7 = DriverManager.getConnection(
+					
+					System.getenv("db_url_exp"),
+					System.getenv("db_username"),
+					System.getenv("db_password")
+					
+					
+					);
+			
+	
+	
+		stmt5 =conn7.prepareStatement("insert into employee(employeeid,emp_firstName,emp_lastName,emp_expaccount) values(?,?,?,?");	
+			
+		stmt5.setInt(1, 100);
+		stmt5.setString(2,"Ashley");
+		stmt5.setString(3,"James");
+		stmt5.setInt(4, 1001);
+	
+		
+		stmt5.executeUpdate();
+			
+//			final String emp_column="insert into employee values(?,?,?,?)";
+//			
+//			
+//			//fix the null pointer exception
+//			stmt5=conn7.prepareStatement(emp_column);
+//			
+//			  stmt5.setInt (1, emp1.getEmployeeId());
+//		      stmt5.setString(2, emp1.getEmp_FirstName());
+//			  stmt5.setString(3, emp1.getEmp_LastName());
+//			  stmt5.setInt(4, emp1.getEmp_ExpAccount());
+//			 
+			  
+			  
+
+			   
+			//Reminder to close 
+			
+			   
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn7.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	 
+
+	}
+
+}

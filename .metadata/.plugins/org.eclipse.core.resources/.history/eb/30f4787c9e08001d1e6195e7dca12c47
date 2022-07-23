@@ -1,0 +1,77 @@
+package com.employee.respository;
+
+public class Employee {
+	
+	
+	private int EmployeeId;
+	private String Emp_FirstName;
+	private String Emp_LastName;
+	private int Emp_ExpAccount;
+	
+	
+	
+	//Start of Constructer
+	public Employee(int employeeId, String emp_FirstName, String emp_LastName, int emp_ExpAccount) {
+		super();
+		EmployeeId = employeeId;
+		Emp_FirstName = emp_FirstName;
+		Emp_LastName = emp_LastName;
+		Emp_ExpAccount = emp_ExpAccount;
+	}
+
+
+
+	//start of getter and setters
+	public int getEmployeeId() {
+		return EmployeeId;
+	}
+
+
+
+	public void setEmployeeId(int employeeId) {
+		EmployeeId = employeeId;
+	}
+
+
+
+	public String getEmp_FirstName() {
+		return Emp_FirstName;
+	}
+
+
+
+	public void setEmp_FirstName(String emp_FirstName) {
+		Emp_FirstName = emp_FirstName;
+	}
+
+
+
+	public String getEmp_LastName() {
+		return Emp_LastName;
+	}
+
+
+
+	public void setEmp_LastName(String emp_LastName) {
+		Emp_LastName = emp_LastName;
+	}
+
+
+
+	public int getEmp_ExpAccount() {
+		return Emp_ExpAccount;
+	}
+
+
+
+	public void setEmp_ExpAccount(int emp_ExpAccount) {
+		Emp_ExpAccount = emp_ExpAccount;
+	}
+	
+	
+	
+	
+	
+	
+
+}//end of class

@@ -1,0 +1,41 @@
+package util.dbConnection;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
+public class DatabaseConnection {
+
+	
+	public getNewConnection() {
+	
+		Connection conn=DriverManager.getConnection(
+				
+				System.getenv("db_url_exp"),
+				System.getenv("db_username"),
+				System.getenv("db_password")
+				
+				 );// end of db connection
+		return null;
+	}
+	
+}
+	
+	
+	
+	
+	
+	
+			
+		
+			
+			
+	
+
+			
+				
+
+
+
+

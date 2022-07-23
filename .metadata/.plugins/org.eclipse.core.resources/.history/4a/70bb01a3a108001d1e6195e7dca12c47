@@ -1,0 +1,24 @@
+package com.projectExpense.project;
+
+
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.employee.respository.Employee;
+
+@SpringBootApplication
+public class ProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjectApplication.class, args);
+		
+		
+	//Setup employee information
+	Employee emp1 = New Employee(101,"Ashley","Jones",1001 );			
+				
+				
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.employee.respository;
+
+public class Employee {
+	
+	
+	private int EmployeeId;
+	private String Emp_FirstName;
+	private String Emp_LastName;
+	private int Emp_ExpAccount;
+	
+	
+
+}

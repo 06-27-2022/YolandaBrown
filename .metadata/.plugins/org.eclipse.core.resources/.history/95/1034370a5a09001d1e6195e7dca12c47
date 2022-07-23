@@ -1,0 +1,58 @@
+package com.employee.respository;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployeeList3 {
+
+	
+	public static void main(String[] args) {
+		
+		
+		  final String info = "INSERT INTO emp_login" +
+			        "  (user name,  password) VALUES " +
+			        " (?, ?);";
+		
+		Connection conn8=null;
+		
+		
+		
+		try {
+			conn8 = DriverManager.getConnection(
+					
+					System.getenv("db_url_exp"),
+					System.getenv("db_username"),
+					System.getenv("db_password")
+					
+					
+					);
+			
+			PreparedStatement test =conn8.prepareStatement(info);
+	           
+			   test.setString(1, "user1");
+			   test.setString(2, "password1");
+
+			test.executeUpdate();
+
+			   
+			//Reminder to close 
+			
+			   
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn8.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	 
+
+	}
+
+}

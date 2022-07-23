@@ -1,0 +1,64 @@
+package com.employee.respository;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployeeList2 {
+
+	
+	public static void main(String[] args) {
+		
+		Connection conn7 = null;
+		PreparedStatement stmt5 =null;
+		
+		Employee emp1 =new Employee( 100, "Ashley", "Jones", 1001);
+		Employee emp2 =new Employee( 102, "Chris", "James",  1002);
+    	Employee emp3 =new Employee( 100, "Barbara", "Jackson", 1003);
+		Employee emp4 =new Employee( 100, "Carlos", "Johnson", 1004);
+		Employee emp5 =new Employee( 100, "Myron", "Stevenson", 1005);
+		
+		try {
+			conn7 = DriverManager.getConnection(
+					
+					System.getenv("db_url_exp"),
+					System.getenv("db_username"),
+					System.getenv("db_password")
+					
+					
+					);
+			
+	
+			
+			
+		final String INSERT_QUERY5 = "insert into  employee(employeeid,emp_firstname,emp_lastname,emp_expaccount) values (?,'?','?',?)";
+			PreparedStatement prst4 = conn7.prepareStatement(INSERT_QUERY5);
+			
+			prst4.setInt(1, emp1.getEmployeeId());
+			prst4.setString(2, emp1.getEmp_FirstName());
+			prst4.setString(3, emp1.getEmp_LastName());
+			prst4.setInt(4, emp1.getEmp_ExpAccount());
+			prst4.execute();
+			  
+
+			   
+			//Reminder to close 
+			
+			   
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn7.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	 
+
+	}
+
+}

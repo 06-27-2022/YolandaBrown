@@ -1,0 +1,50 @@
+package com.employee.respository;
+import java.sql.PreparedStatement;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class EmployeeList3 {
+
+	
+	public static void main(String[] args) {
+		
+		Connection conn8 = null;
+		String staffsql="insert into employee values (?,?,?,?)";
+		Employee emp1 =new  Employee(4, "Ashley", "James", 1004);
+		
+		try {
+			conn8 = DriverManager.getConnection(
+					
+					System.getenv("db_url_exp"),
+					System.getenv("db_username"),
+					System.getenv("db_password")
+					);
+		
+		PreparedStatement stmt =conn8.prepareStatement(staffsql);
+		
+	     stmt.setInt( 1, emp1.getEmployeeId());
+	     stmt.setString(2, emp1.getEmp_FirstName());
+	     stmt.setString(3, emp1.getEmp_LastName());
+	      stmt.setInt(4,emp1.getEmp_ExpAccount());
+		stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				conn8.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+
+
+}
+	
+}
